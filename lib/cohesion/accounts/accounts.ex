@@ -8,13 +8,19 @@ defmodule Cohesion.Accounts do
 
   alias Cohesion.Accounts.User
 
+  def data(),
+    do:
+      Dataloader.Ecto.new(
+        Repo,
+        query: &query/2
+      )
+
+  def query(queryable, _), do: queryable
+
   @doc """
   Returns the list of users.
 
-  ## Examples
 
-      iex> list_users()
-      [%User{}, ...]
 
   """
   def list_users do
