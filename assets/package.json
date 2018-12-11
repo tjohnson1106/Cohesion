@@ -1,0 +1,51 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "compile": "relay-compiler --src ./js --schema schema.graphql",
+    "test": "jest"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer",
+      "react-native-web/jest/serializer"
+    ]
+  },
+  "dependencies": {
+    "@absinthe/socket-relay": "^0.1.11",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-native-web": "^0.9.9",
+    "react-relay": "^1.7.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-react-native-web": "^0.9.9",
+    "babel-plugin-relay": "^1.7.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "graphql": "^14.0.2",
+    "jest": "^23.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "regenerator-runtime": "^0.13.1",
+    "relay-compiler": "^1.7.0",
+    "relay-runtime": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
