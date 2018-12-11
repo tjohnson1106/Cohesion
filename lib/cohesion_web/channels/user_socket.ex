@@ -1,6 +1,9 @@
 defmodule CohesionWeb.UserSocket do
   use Phoenix.Socket
 
+  use Absinthe.Phoenix.Socket,
+    schema: CohesionWeb.Schema
+
   ## Channels
   # channel "room:*", CohesionWeb.RoomChannel
 

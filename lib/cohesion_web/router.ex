@@ -13,10 +13,14 @@ defmodule CohesionWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", CohesionWeb do
-    pipe_through :browser
+  scope "/" do
+    pipe_through :api
 
-    get "/", PageController, :index
+    forward "/api", Absinthe.Plug, schema: CohesionWeb.Schema
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: CohesionWeb.Schema,
+      socket: CohesionWeb.UserSocket
   end
 
   # Other scopes may use custom stacks.

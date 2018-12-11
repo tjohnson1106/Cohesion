@@ -2,7 +2,6 @@ defmodule Cohesion.Accounts.Vote do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "votes" do
     belongs_to :user, Cohesion.Accounts.User
     belongs_to :link, Cohesion.Accounts.Link

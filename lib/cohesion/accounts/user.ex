@@ -19,8 +19,8 @@ defmodule Cohesion.Accounts.User do
     user
     |> cast(attrs, [:name, :email, :password])
     |> validate_required([:email, :password])
-    |> validate_length([:password, min: 8])
+    |> validate_length(:password, min: 8)
     |> validate_format(:email, ~r/^\w+@\w+\.\w{2,}$/)
-    |> unique_contstraint(:email)
+    |> unique_constraint(:email)
   end
 end
