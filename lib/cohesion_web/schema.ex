@@ -42,9 +42,14 @@ defmodule CohesionWeb.Schema do
       |> Dataloader.add_source(Accounts, Accounts.data())
 
   # =======
-  # query do
-  #   
-  # end
+  query do
+    # field :id, non_null(:id)
+    # field :name, :string
+    # field :email, non_null(:string)
+    # field :password, non_null(:string)
+
+    # timestamps()
+  end
 
   object :user do
     field :id, non_null(:id)

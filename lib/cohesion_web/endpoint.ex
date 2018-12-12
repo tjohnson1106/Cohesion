@@ -1,6 +1,6 @@
 defmodule CohesionWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :cohesion
-  use Absinthe.Phoenix.Endoint
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", CohesionWeb.UserSocket,
     websocket: true,
