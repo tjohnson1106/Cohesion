@@ -15,11 +15,18 @@ import Page from "./pages";
 import Screen from "./screens";
 import environment from "./environment";
 
-const App = () => (
+const query = graphql`
+  query appQuery {
+    ...List
+  }
+`;
+
+const Root = () => (
   <ErrorBoundary>
     <Router>
       <QueryRenderer
         environment={environment}
+        query={query}
         render={({ error, props }) => {
           //console.log(props);
           if (error) {

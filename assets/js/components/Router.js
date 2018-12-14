@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
 import { pageStyles } from "../pages";
 import { screenStyles } from "../screens";
+import List from "./link/List";
 
 const Router = ({ data }) => {
   const format = Platform.OS === "web" ? pageStyles : screenStyles;
@@ -20,6 +21,7 @@ const Router = ({ data }) => {
             </View>
           )}
         />
+        <Route exact path="/" render={() => <List data={data} />} />
       </Switch>
     </ErrorBoundary>
   );
