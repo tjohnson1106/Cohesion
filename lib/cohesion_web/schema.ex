@@ -41,14 +41,11 @@ defmodule CohesionWeb.Schema do
       Dataloader.new()
       |> Dataloader.add_source(Accounts, Accounts.data())
 
-  # =======
   query do
-    # field :id, non_null(:id)
-    # field :name, :string
-    # field :email, non_null(:string)
-    # field :password, non_null(:string)
-
-    # timestamps()
+    @desc "Lists all links"
+    field :all_links, non_null(list_of(non_null(:link))) do
+      resolve(&Resolvers.Accounts.list_links/3)
+    end
   end
 
   object :user do
